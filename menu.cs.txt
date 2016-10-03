@@ -1,136 +1,134 @@
- using UnityEngine;
- using System.Collections;
- 
- public class menu : MonoBehaviour 
- {
-	 public GUISkin guiSkin;
-     public Texture2D background, LOGO;
-     public bool DragWindow = false;
-     public string levelToLoadWhenClickedPlay = "";
-     public string[] AboutTextLines = new string[0];
-	 public string input;
+using UnityEngine;
+using System.Collections;
+
+
+public class menu : MonoBehaviour 
+{
+	public GUISkin guiSkin;
+	public Texture2D background, LOGO;
+	public bool DragWindow = false;
+	public string levelToLoadWhenClickedPlay = "";
+	public string[] AboutTextLines = new string[0];
+	public string input;
+	public string s;
 
 
 	public void Sad()
 	{
-		input = input + "D";
+		//System.Text.StringBuilder s = new System.Text.StringBuilder();
+		//s.Append(input).Append("D");
+		s = string.Concat(input,"D");
 	}
 
 	public void Peaceful()
 	{
-		input = input + "P";
+		s = string.Concat(input,"P");
 	}
 
 	public void Angry()
 	{
-		input = input + "A";
+		s = string.Concat(input,"Y");
 	}
 
 	public void Stressed()
 	{
-		input = input + "S";
+		s = string.Concat(input,"Z");
+
 	}
 
 	public void Energetic()
 	{
-		input = input + "E";
+		s = string.Concat(input,"E");
 	}
 
 	public void AmongPeople()
 	{
-		input = input + "AP";
+		s = string.Concat(input,"R");
 	}
-		
-	public void mood7()
+
+	public void Curious()
 	{
-		input = input + "m7";
+		s = string.Concat(input,"U");
 	}
 
 
 
- 
-     private string clicked = "", MessageDisplayOnAbout = "mood \n ";
-     private Rect WindowRect = new Rect((Screen.width / 2) - 100, Screen.height / 2 - 100, 200, 200);
-     private float volume = 1.0f;
- 
-     private void Start()
-     {
-         for (int x = 0; x < AboutTextLines.Length;x++ )
-         {
-             MessageDisplayOnAbout += AboutTextLines[x] + " \n ";
-         }
-     }
- 
-     private void OnGUI()
-     {
-         if (background != null)
-             GUI.DrawTexture(new Rect(0,0,Screen.width , Screen.height),background);
-         if (LOGO != null && clicked != "about")
-             GUI.DrawTexture(new Rect((Screen.width / 2) - 100, 30, 200, 200), LOGO);
- 
-         GUI.skin = guiSkin;
-		if (clicked == "")
+
+	private string clicked = "", MessageDisplayOnAbout = "mood \n ";
+	private Rect WindowRect = new Rect((Screen.width / 2) - 100, Screen.height / 2 - 100, 200, 200);
+	private float volume = 1.0f;
+
+	private void Start()
+	{
+		for (int x = 0; x < AboutTextLines.Length;x++ )
 		{
-			WindowRect = GUI.Window(0, WindowRect, menuFunc, "Main Menu");
+			MessageDisplayOnAbout += AboutTextLines[x] + " \n ";
 		}
-		else if (clicked == "Sad")
+	}
+
+	private void OnGUI()
+	{
+		if (background != null)
+			GUI.DrawTexture(new Rect(0,0,Screen.width , Screen.height),background);
+		if (LOGO != null && clicked != "about")
+			GUI.DrawTexture(new Rect((Screen.width / 2) - 100, 30, 200, 200), LOGO);
+
+		GUI.skin = guiSkin;
+		switch (clicked)
 		{
+		case "":
+			WindowRect = GUI.Window (0, WindowRect, menuFunc, "Main Menu");
+			break;
+		case "Sad":
 			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
-			Sad ();
-		}
-         else if (clicked == "Peaceful")
-         {
-			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
+			Sad ();break;
+		case "Peaceful":
+			GUI.Box (new Rect (0, 0, Screen.width, Screen.height), MessageDisplayOnAbout);
 			Peaceful ();
-         }
-         else if (clicked == "Angry")
-         {
-             GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
+			break;
+		case "Angry":
+			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
 			Angry ();
-         }
-		else if (clicked == "Stressed")
-		{
+			break;
+		case "Stressed":
 			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
 			Stressed ();
-		
-		}
-		else if (clicked == "Energetic")
-		{
+			break;
+		case "Energetic":
 			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
 			Energetic ();
-		}
-		else if (clicked == "AmongPeople")
-		{
+			break;
+		case "AmongPeople":
 			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
 			AmongPeople ();
-		}
-		else if (clicked == "mood7")
-		{
+			break;
+		case "Curious":
 			GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
-			mood7 ();
+			Curious ();
+			break;
+		default:GUI.Box(new Rect (0,0,Screen.width,Screen.height), MessageDisplayOnAbout);
+			break;
 		}
-     }
-
-
-     private void menuFunc(int id)
-     {
-         //buttons 
-         if (GUILayout.Button("Sad"))
-         {
-			 clicked = "Sad";
-         } 
-         if (GUILayout.Button("Peaceful"))
-         {
-             clicked = "Peaceful";
-         }
-         if (GUILayout.Button("Angry"))
-         {
-             clicked = "Angry";
-         }
-         if (GUILayout.Button("Stressed"))
-         {
-			 clicked = "Stressed";
-         }
+	}
+	private void menuFunc(int id)
+	{
+		//buttons 
+		if (GUILayout.Button("Sad"))
+		{
+			clicked = "Sad";
+		} 
+		if (GUILayout.Button("Peaceful"))
+		{
+			clicked = "Peaceful";
+		}
+		if (GUILayout.Button("Angry"))
+		{
+			clicked = "Angry";
+		}
+		if (GUILayout.Button("Stressed"))
+		{
+			clicked = "Stressed";
+		}
 		if (GUILayout.Button("Energetic"))
 		{
 			clicked = "Energetic";
@@ -143,9 +141,9 @@
 		{
 			clicked = "mood7";
 		} 
-         if (DragWindow)
-             GUI.DragWindow(new Rect(0, 0, Screen.width, Screen.height));
-     }
+		if (DragWindow)
+			GUI.DragWindow(new Rect(0, 0, Screen.width, Screen.height));
+	}
 	private void Update()
 	{
 		if (clicked == "Sad" && Input.GetKey (KeyCode.Escape))
@@ -163,4 +161,4 @@
 		if (clicked == "mood7" && Input.GetKey (KeyCode.Escape))
 			clicked = "";
 	}
- }
+}
