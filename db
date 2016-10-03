@@ -1,0 +1,22 @@
+
+using UnityEngine;
+using UnityEngine.UI;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+
+
+public class Test
+{
+	public static void Main()
+	{
+		string[] db=new string[89]{"CPR","HZR","FZ","HUZY","SPZYR","BD","BD","LDEPZY","AEUY","SPZYR","ODR","HZR","HDZ","OUR","FDZR","LUYR","LUR","HZ","FEZR","CDPR","AEY","ADE","LPU","LP","SZR","L","CDUR","OEUY","BU","HZR","LP","HZR","HZ","L","BDU","FZ","CU","OUZ","HDZY","HDZYR","CP","LDU","HDZR","HDZR","HDZR","BDU","LP","BD","A","AEY","SDPZYR","A","HDZ","HZ","SDZY","P","FDZR","AY","LP","LDP","FZ","FDZR","ODR","SPUZ","HZ","LDPU","SDPZY","HZ","OUZ","OU","OPY","B","CU","HZ","CPU","FZ","DZ","BD","OP","LDPR","OPZ","ODUY","ODZR","AEZ","AEZ","AEZ","OEU","BDP","ADEZ"};
+		string input="HPR";
+		int c=0;
+		int m,i;
+		List<int> v = new List<int>();
+		for (i = 0; i < 89; i++)  		//iterates places(strings)
+		{						
+			v.Clear ();
