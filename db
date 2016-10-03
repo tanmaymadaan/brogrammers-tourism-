@@ -1,22 +1,59 @@
-
 using UnityEngine;
-using UnityEngine.UI;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
+using System.Collections;
+using UnityEngine.UI;
+
+	public class EDIT : MonoBehaviour {
+
+	public Text t;	  
+
+	public void onClick(){
+		{
+			//string[] db=new string[]{"CPR","HZR","FZ","HUZY","SPZYR","BD","BD","LDEPZY","AEUY","SPZYR","ODR","HZR","HDZ","OUR","FDZR","LUYR","LUR","HZ","FEZR","CDPR","AEY","ADE","LPU","LP","SZR","L","CDUR","OEUY","BU","HZR","LP","HZR","HZ","L","BDU","FZ","CU","OUZ","HDZY","HDZYR","CP","LDU","HDZR","HDZR","HDZR","BDU","LP","BD","A","AEY","SDPZYR","A","HDZ","HZ","SDZY","P","FDZR","AY","LP","LDP","FZ","FDZR","ODR","SPUZ","HZ","LDPU","SDPZY","HZ","OUZ","OU","OPY","B","CU","HZ","CPU","FZ","DZ","BD","OP","LDPR","OPZ","ODUY","ODZR","AEZ","AEZ","AEZ","OEU","BDP","ADEZ"};
+			string[] db = new string[]{"PUOQ","PSRU"};
+			string input="PQR";
+	//		int c=0;
+			int m,i;
+			int z = 0;
+			//List<int> v= new List<int>();
+			int [] v=new int[2] ;
+			Debug.Log (input.Length);
+			for (i = 0; i < db.Length; i++)  		//iterates places(strings)
+			{	
+				v [i] = 0;
+
+					for (int j = 1; j < input.Length; j++) 
+					{
+						
+						for (int k = 1; k < input.Length; k++){
+							if (input [k] == db [i] [j]) {
+								v [i]++;
+								break;
+							}
+						}
+						
+				//iterates characters(emotions) of string(place)p
+				}
+			}	
+			m = v.Max();
+			for (i = 0; i < v.Length; i++)
+			{
+				if (v [i] == m) {
+					z = i;
+				}
 
 
-public class Test
-{
-	public static void Main()
-	{
-		string[] db=new string[89]{"CPR","HZR","FZ","HUZY","SPZYR","BD","BD","LDEPZY","AEUY","SPZYR","ODR","HZR","HDZ","OUR","FDZR","LUYR","LUR","HZ","FEZR","CDPR","AEY","ADE","LPU","LP","SZR","L","CDUR","OEUY","BU","HZR","LP","HZR","HZ","L","BDU","FZ","CU","OUZ","HDZY","HDZYR","CP","LDU","HDZR","HDZR","HDZR","BDU","LP","BD","A","AEY","SDPZYR","A","HDZ","HZ","SDZY","P","FDZR","AY","LP","LDP","FZ","FDZR","ODR","SPUZ","HZ","LDPU","SDPZY","HZ","OUZ","OU","OPY","B","CU","HZ","CPU","FZ","DZ","BD","OP","LDPR","OPZ","ODUY","ODZR","AEZ","AEZ","AEZ","OEU","BDP","ADEZ"};
-		string input="HPR";
-		int c=0;
-		int m,i;
-		List<int> v = new List<int>();
-		for (i = 0; i < 89; i++)  		//iterates places(strings)
-		{						
-			v.Clear ();
+				//place with highest number of emotion-matches, remaining within the 
+				//same theme, is output
+			}
+
+			string output = db [z];
+
+			t.text = output;
+		
+
+		}
+
+	}
+
+
