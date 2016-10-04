@@ -45,6 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\UITween\Prefabs\Click Effect Pref\ClickedWaveAnimation.cs" />
+     <Compile Include="Assets\UITween\ScenesExamplesScripts\ActivateOnEnable.cs" />
+     <Compile Include="Assets\UITween\ScenesExamplesScripts\CreateAnimImage.cs" />
+     <Compile Include="Assets\UITween\ScenesExamplesScripts\FollowClick.cs" />
+     <Compile Include="Assets\UITween\Scripts\EasyTween.cs" />
+     <Compile Include="Assets\UITween\Scripts\ReferencedFrom.cs" />
+     <Compile Include="Assets\UITween\Scripts\UITween.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CloudRecoBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\CylinderTargetBehaviour.cs" />
@@ -86,13 +93,16 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\db.cs" />
+     <Compile Include="Assets\hamburger_menu.cs" />
+     <Compile Include="Assets\press_all.cs" />
+     <Compile Include="Assets\start_canvas_ar.cs" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
      <None Include="Assets\Vuforia\Shaders\VertexLitWithZ.shader" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Vuforia\Shaders\RenderVideoBackground.shader" />
      <None Include="Assets\StreamingAssets\QCAR\MoodToMaps.xml" />
+     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
      <None Include="Assets\Vuforia\Shaders\VideoBackground.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Editor\WebcamProfiles\profiles.xml" />
