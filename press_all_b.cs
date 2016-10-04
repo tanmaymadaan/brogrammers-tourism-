@@ -1,19 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-public class press_all : MonoBehaviour
+public class press_all_b : MonoBehaviour
 {
-	
-	public static string input = ""; 
+	//public static string input;
+	//string input;
+	public static string inputOut(){
+		press_all p = new press_all ();
+		return press_all.retinput ();
+
+	}
+
+	static string input=inputOut();
+
+	public static string retInput(){
+		return input;
+	}
+
 	int a= 1,b=1,c=1,d=1,e=1,f=1;
-	public void sad(){
+	public void bandf(){
 		if (a==1) {
-			input += "D";
+			input += "B";
 			a = 0;
 		} else {
 			for (int i = 0; i < input.Length; i++) {
-				if (input [i] == 'D') {
+				if (input [i] == 'B') {
 					input = input.Remove (i, 1);
 					break;
 				}					
@@ -23,17 +34,13 @@ public class press_all : MonoBehaviour
 		Debug.Log(input);
 	}
 
-	public static string retinput(){
-		return input;
-	}
-
-	public void energetic(){
+	public void adv(){
 		if (b==1) {
-			input += "E";
+			input += "A";
 			b = 0;
 		} else {
 			for (int i = 0; i < input.Length; i++) {
-				if (input [i] == 'E') {
+				if (input [i] == 'A') {
 					input = input.Remove (i, 1);
 					break;
 				}					
@@ -42,13 +49,13 @@ public class press_all : MonoBehaviour
 		} 
 		Debug.Log(input);
 	}
-	public void angry(){
+	public void food(){
 		if (c==1) {
-			input += "Y";
+			input += "H";
 			c = 0;
 		} else {
 			for (int i = 0; i < input.Length; i++) {
-				if (input [i] == 'Y') {
+				if (input [i] == 'H') {
 					input = input.Remove (i, 1);
 					break;
 				}					
@@ -57,13 +64,13 @@ public class press_all : MonoBehaviour
 		} 
 		Debug.Log(input);
 	}
-	public void peaceful(){
+	public void culture(){
 		if (f==1) {
-			input += "P";
+			input += "C";
 			f = 0;
 		} else {
 			for (int i = 0; i < input.Length; i++) {
-				if (input [i] == 'P') {
+				if (input [i] == 'C') {
 					input = input.Remove (i, 1);
 					break;
 				}					
@@ -72,13 +79,13 @@ public class press_all : MonoBehaviour
 		} 
 		Debug.Log(input);
 	}
-	public void lonely(){
+	public void natwon(){
 		if (d==1) {
-			input += "R";
+			input += "L";
 			d = 0;
 		} else {
 			for (int i = 0; i < input.Length; i++) {
-				if (input [i] == 'R') {
+				if (input [i] == 'L') {
 					input = input.Remove (i, 1);
 					break;
 				}					
@@ -87,13 +94,28 @@ public class press_all : MonoBehaviour
 		} 
 		Debug.Log(input);
 	}
-	public void curious(){
+	public void shoping(){
 		if (e==1) {
-			input += "U";
+			input += "Z";
 			e = 0;
 		} else {
 			for (int i = 0; i < input.Length; i++) {
-				if (input [i] == 'U') {
+				if (input [i] == 'Z') {
+					input = input.Remove (i, 1);
+					break;
+				}					
+			}
+			e = 1;
+		} 
+		Debug.Log(input);
+	}
+	public void feell(){
+		if (e==1) {
+			input += "O";
+			e = 0;
+		} else {
+			for (int i = 0; i < input.Length; i++) {
+				if (input [i] == 'O') {
 					input = input.Remove (i, 1);
 					break;
 				}					
@@ -103,4 +125,5 @@ public class press_all : MonoBehaviour
 		Debug.Log(input);
 	}
 }
+
 
